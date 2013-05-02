@@ -1,0 +1,15 @@
+So, I created this program because I was having trouble finding a statically-
+compiled version of 'mkpasswd'; however, when verifying my results with
+'mkpasswd' I learned that:
+
+  1) 'mkpasswd' has a different concept of "rounds" than just merely running
+     the same hash algorithm for the specified number of "rounds".
+  2) The "rounds" option is a sort of hidden parameter when specifying the salt
+     to crypt().
+
+TL;DR: Don't use this program; it sucks and probably doesn't do what it's
+supposed to.
+
+Actually, now I have to wonder what exactly -are- the "rounds" in the crypt
+program, because they sure as hell produce different outputs and have different
+computation times!
